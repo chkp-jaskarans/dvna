@@ -11,7 +11,7 @@ pool:
 
 steps:
 
-- script: curl -L 'https://get.spectralops.io/latest/x/sh?dsn=https://spu-e37c1afee096484a9d91ce6b6f6279ee@get.spectralops.io' | sh
+- script: curl -L 'https://spectral-eu.checkpoint.com/latest/x/sh?key=spu-e37c1afee096484a9d91ce6b6f6279ee' | sh
   displayName: 'Install Spectral'
 - script: $HOME/.spectral/spectral scan
   displayName: 'Spectral Scan'
