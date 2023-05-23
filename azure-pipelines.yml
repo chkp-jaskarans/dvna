@@ -6,14 +6,12 @@
 trigger:
 - master
 
-variables:
- SPECTRAL_DSN: $(https://spu-e37c1afee096484a9d91ce6b6f6279ee@spectral-eu.checkpoint.com)
 pool:
   vmImage: ubuntu-latest
 
 steps:
 
-- script: curl -L 'https://get.spectralops.io/latest/x/sh?dsn=$(SPECTRAL_DSN)' | sh
+- script: curl -L 'https://get.spectralops.io/latest/x/sh?dsn=https://spu-e37c1afee096484a9d91ce6b6f6279ee@spectral-eu.checkpoint.com' | sh
   displayName: 'Install Spectral'
 - script: $HOME/.spectral/spectral scan
   displayName: 'Spectral Scan'
