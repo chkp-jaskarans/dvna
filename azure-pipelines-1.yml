@@ -17,7 +17,7 @@ steps:
     git fetch --all
     git switch `basename $(Build.SourceBranch)`
 
-- script: curl -L 'https://spectral-eu.checkpoint.com/latest/x/sh?dsn=$(SPECTRAL_DSN)' | sh
+- script: curl -L 'https://spectral-eu.checkpoint.com/latest/x/sh?key=spu-e37c1afee096484a9d91ce6b6f6279ee' | sh
   displayName: 'Install Spectral'
 - script: $HOME/.spectral/spectral scan --ok --dsn $(SPECTRAL_DSN) --engines secrets,iac,oss --include-tags base,audit3,iac
   displayName: 'Spectral Scan'
