@@ -17,7 +17,7 @@ steps:
     git fetch --all
     git switch `basename $(Build.SourceBranch)`
 
-- script: curl -L 'https://get.spectralops.io/latest/x/sh?dsn=$(SPECTRAL_DSN)' | sh
+- script: curl -L 'https://get.spectralops.io/latest/x/sh?dsn=https://spu-75c25621ac9b431f8e952ef058c16e6d@get.spectralops.io' | sh
   displayName: 'Install Spectral'
-- script: $HOME/.spectral/spectral scan --ok --dsn $(SPECTRAL_DSN) --engines secrets,iac,oss --include-tags base,audit3,iac
+- script: $HOME/.spectral/spectral scan --ok --dsn https://spu-75c25621ac9b431f8e952ef058c16e6d@get.spectralops.io --engines secrets,iac,oss --include-tags base,audit3,iac
   displayName: 'Spectral Scan'
